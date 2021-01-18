@@ -1,7 +1,7 @@
 import XCTest
 
-import MissingNoodleKitTests
+import MNDataStructuresTests
 
 var tests = [XCTestCaseEntry]()
-tests += MissingNoodleKitTests.allTests()
+tests += MNDataStructuresTests.allTests()
 XCTMain(tests)
