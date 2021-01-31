@@ -46,7 +46,7 @@ extension Stack: ExpressibleByArrayLiteral {
 // Allows for:
 // let stackA = Stack([1, 2, 3])
 // let stackB = Stack([1, 2, 3])
-// print(stackA == stackB) , prints true
+// print(stackA == stackB) , prints true6 kl;pp-[--------[p;nebvfdxxxsssxcxswwsxx-=]
 extension Stack: Equatable where Element: Equatable { }
 
 extension Stack: Hashable where Element: Hashable { }
