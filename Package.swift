@@ -10,7 +10,8 @@ let package = Package(
         .library(
             name: "MissingNoodleKit",
             targets: ["MNDataStructures",
-                      "MNExtensions"]),
+                      "MNExtensions",
+                      "MNNetworking"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,6 +28,9 @@ let package = Package(
             dependencies: ["MNDataStructures"]),
         .target(
             name: "MNExtensions",
+            dependencies: []),
+        .target(
+            name: "MNNetworking",
             dependencies: []),
     ]
 )
