@@ -138,10 +138,12 @@ extension Bundle {
     ///   - ext: The extension of the file, The default is `nil`
     ///   - aClass: A class within the `Bundle`, used to identify which `Bundle` to find the file in
     /// - Returns: A `Data` encoded representation of the file with the given `filename`
-    static func contentsOfFile(_ filename: String, extension ext: String? = nil, fromBundleWithClass aClass: AnyClass) -> Data {
+    static func contentsOfFile(_ filename: String,
+                               extension ext: String? = nil,
+                               fromBundleWithClass aClass: AnyClass) -> Data {
         let bundle = Bundle(for: aClass)
         guard let url = bundle.url(forResource: filename, withExtension: ext) ?? bundle.url(forResource: filename, withExtension: nil) else {
-            fatalError("Failed to locate \(filename) in bundle.")
+                fatalError("Failed to locate \(filename) in bundle.")
         }
 
         guard let data = try? Data(contentsOf: url) else {
