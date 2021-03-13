@@ -159,10 +159,11 @@ extension Bundle {
     /// - Returns: The JSON file data decoded into the given Type T
     public func decode<T: Decodable>(_ type: T.Type,
                                      from filename: String,
+                                     fromBundleWithClass aClass: AnyClass,
                                      dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                                      keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
-
-        let data = Self.contentsOfFile(filename, fromBundleWithClass: Self.self)
+        
+        let data = Self.contentsOfFile(filename, fromBundleWithClass: aClass)
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = dateDecodingStrategy
