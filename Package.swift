@@ -5,13 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "MissingNoodleKit",
+    platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MissingNoodleKit",
             targets: ["MNDataStructures",
-                      "MNExtensions",
-                      "MNNetworking"]),
+                      "MNAdditions",
+                      "MNNetworking",
+                      "MNUtilities"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,10 +29,19 @@ let package = Package(
             name: "MNDataStructuresTests",
             dependencies: ["MNDataStructures"]),
         .target(
-            name: "MNExtensions",
+            name: "MNAdditions",
             dependencies: []),
+        .testTarget(
+            name: "MNAdditionsTests",
+            dependencies: ["MNAdditions"]),
         .target(
             name: "MNNetworking",
             dependencies: []),
+        .target(
+            name: "MNUtilities",
+            dependencies: []),
+//        .testTarget(
+//            name: "MNUtilityTestsTests",
+//            dependencies: ["MNUtilities"]),
     ]
 )

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Functions
 public extension Sequence {
     
     /// Sorts by by any kind of Value, as long as a comparator function is also provided

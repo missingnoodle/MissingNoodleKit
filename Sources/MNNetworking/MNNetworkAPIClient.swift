@@ -9,7 +9,6 @@ import Combine
 import Foundation
 import Network
 
-@available(iOS 13.0, *)
 public class MNNetworkAPIClient<T: Decodable> {
     private var disposeBag = Set<AnyCancellable>()
     private let url: URL
